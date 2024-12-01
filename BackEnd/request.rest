@@ -1,0 +1,44 @@
+### Register User
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "123456",
+  "confPassword": "123456"
+}
+
+### Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "johndoe@example.com",
+  "password": "123456"
+}
+
+### Refresh Token
+GET http://localhost:5000/token
+Cookie: refreshToken=<INSERT_YOUR_REFRESH_TOKEN_HERE>
+
+### Logout User
+DELETE http://localhost:5000/logout
+Cookie: refreshToken=<INSERT_YOUR_REFRESH_TOKEN_HERE>
+
+### Get Users (Authorized)
+GET http://localhost:5000/users
+Authorization: Bearer <INSERT_YOUR_ACCESS_TOKEN_HERE>
+
+### Add Ulasan (Authorized)
+POST http://localhost:5000/ulasantanjakan13
+Content-Type: application/json
+Authorization: Bearer <INSERT_YOUR_ACCESS_TOKEN_HERE>
+
+{
+  "desc_review": "Tanjakan ini sangat menantang dan indah!"
+}
+
+### Get Ulasan
+GET http://localhost:5000/ulasantanjakan13
